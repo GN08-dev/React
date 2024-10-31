@@ -1,12 +1,13 @@
 import { useState } from "react";
 //para poder reutilizar debera ser usado parametros o parametrizar
-export function TwitterFollowCard({children ,userName  = "uknown", formatUsarName = ""}){
+export function TwitterFollowCard({children ,userName  = "uknown", formatUsarName, initisFollowing}){
     //uso de state maneja el uso de dos posiciones SE PUEDE HACER DE ESTA FORMA 
     // const state = useState(false);
-    // const isFollowing = state[0];
-    // const setIsFollowing = state[1];
+    // const isFollowing = state[0]; //saber si se sige 
+    // const setIsFollowing = state[1]; // saber si no se sigue  forma de actualizar el estado
     //o de esta 
-    const[isFollowing, setIsFollowing] = useState(false)
+    //modificamos en vez de false  le pase el  initisFollowing
+    const[isFollowing, setIsFollowing] = useState(initisFollowing) // el estado que se cambiara  
     
     const imageSrc = `./public/${userName}`
     //coondicional a usar para renderizar el seguir o no 
@@ -17,6 +18,8 @@ export function TwitterFollowCard({children ,userName  = "uknown", formatUsarNam
     const handleclick =()=>{
         setIsFollowing(!isFollowing) ///si is folowing es true lo pasara a false
     }
+
+
     return (
         <article className="tw-followCard">
         <header className="tw-followCard-header">
