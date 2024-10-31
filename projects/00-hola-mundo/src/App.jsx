@@ -14,7 +14,8 @@ export function App() {
     const cambioNombre = () => {
         setIsName(!isName);
     };
-
+    //renderizado de lista de  elementos  (no nos llega un fetch si no tenemos un array con elementos)
+    //para cuando le hagamos un fetch  AUN NO SE COMO HACERLO
     return(
         <section className='App'>
             <TwitterFollowCard 
